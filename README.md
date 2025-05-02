@@ -39,6 +39,14 @@ The Clinic Management System is a digital platform designed to revolutionize hea
 
 ---
 
+## 📈 Highlights
+
+1. **Real-Time Revenue Insights**: Monitor daily, weekly, and monthly revenue on the doctor's dashboard with interactive charts.
+2. **Seven-Day Login System**: Reduce frequent logins while maintaining robust session security.
+3. **Appointment Management**: Delete past appointments in real-time with a simple interface.
+
+---
+
 ## how to use
 
 1. **clone repo**
@@ -47,15 +55,7 @@ The Clinic Management System is a digital platform designed to revolutionize hea
 git clone https://github.com/Udit-kasana/Clinic-management-system.git
 ```
 
-2. **got to root folder**
-
-```bash
-cd Clinic-management-system
-npm install
-npm run dev
-```
-
-3. **in backend folder:**
+2. **in backend folder:**
    create .env file and fill the empty strings
 
 ```bash
@@ -72,11 +72,11 @@ REFRESH_TOKEN_SECRET=""
 REFRESH_TOKEN_EXPIRY=""
 ```
 
+3. **got to root folder**
 
-## 📈 Highlights
+```bash
+cd Clinic-management-system
+npm install
+npm run dev
+```
 
-1. **Real-Time Revenue Insights**: Monitor daily, weekly, and monthly revenue on the doctor's dashboard with interactive charts.
-2. **Seven-Day Login System**: Reduce frequent logins while maintaining robust session security.
-3. **Appointment Management**: Delete past appointments in real-time with a simple interface.
-
----
