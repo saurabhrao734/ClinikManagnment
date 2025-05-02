@@ -56,7 +56,7 @@ git clone https://github.com/Udit-kasana/Clinic-management-system.git
 ```
 
 2. **in backend folder:**
-   create .env file and fill the empty strings
+   create .env file
 
 ```bash
 cd backend
@@ -65,11 +65,11 @@ touch .env
 MONGODB_URI="" //mongodb uri here
 PORT=5000
 
-ACCESS_TOKEN_SECRET=""
-ACCESS_TOKEN_EXPIRY=""
+ACCESS_TOKEN_SECRET="anything"
+ACCESS_TOKEN_EXPIRY="7d"
 
-REFRESH_TOKEN_SECRET=""
-REFRESH_TOKEN_EXPIRY=""
+REFRESH_TOKEN_SECRET="anything"
+REFRESH_TOKEN_EXPIRY="7d"
 ```
 
 3. **got to root folder**
