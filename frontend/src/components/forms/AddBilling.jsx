@@ -52,7 +52,7 @@ const AddBilling = ({ patient_name }) => {
     setIsLoading(true);
     axios
       .post(
-        "http://localhost:8000/api/v1/users/receptionist/addPaymentDetails",
+        "http://localhost:5000/api/v1/users/receptionist/addPaymentDetails",
         {
           patient_name,
           amount,

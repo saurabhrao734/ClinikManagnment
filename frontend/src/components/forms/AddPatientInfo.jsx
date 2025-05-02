@@ -80,7 +80,7 @@ function AddPatientInfo({
     setIsLoading(true);
     axios
       .post(
-        "http://localhost:8000/api/v1/users/receptionist/addPatientDetails",
+        "http://localhost:5000/api/v1/users/receptionist/addPatientDetails",
         {
           patient_name,
           mobile_no,
@@ -152,7 +152,7 @@ function AddPatientInfo({
     setIsLoading(true);
     axios
       .post(
-        "http://localhost:8000/api/v1/users/receptionist/updatePatientDetails",
+        "http://localhost:5000/api/v1/users/receptionist/updatePatientDetails",
         {
           patient_name,
           mobile_no,

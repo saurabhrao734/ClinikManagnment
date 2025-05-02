@@ -53,7 +53,7 @@ function AddPrescriptions({ patient_name }) {
   const handleAddMedicine = () => {
     setIsLoadingMedicine(true);
     axios
-      .post("http://localhost:8000/api/v1/users/receptionist/addMedicine", {
+      .post("http://localhost:5000/api/v1/users/receptionist/addMedicine", {
         patient_name,
         medicine_name: medicine,
         dosage,
@@ -93,7 +93,7 @@ function AddPrescriptions({ patient_name }) {
 
     axios
       .post(
-        "http://localhost:8000/api/v1/users/receptionist/addReport",
+        "http://localhost:5000/api/v1/users/receptionist/addReport",
         formData
       )
       .then((response) => {

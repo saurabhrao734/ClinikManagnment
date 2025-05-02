@@ -54,7 +54,7 @@ const Login = () => {
     }
 
     axios
-      .post("http://localhost:8000/api/v1/users/login", {
+      .post("http://localhost:5000/api/v1/users/login", {
         role: role.toLowerCase(),
         username,
         password,

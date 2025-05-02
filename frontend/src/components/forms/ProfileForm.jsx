@@ -87,7 +87,7 @@ const ProfileForm = () => {
       setIsLoading(false);
     } else {
       axios
-        .post("http://localhost:8000/api/v1/users/updateProfile", {
+        .post("http://localhost:5000/api/v1/users/updateProfile", {
           ...formData,
           role: currentUser.role,
         })
@@ -137,7 +137,7 @@ const ProfileForm = () => {
     const profileData = new FormData();
     profileData.set("avatar", avatar);
     axios
-      .post(`http://localhost:8000/api/v1/users/changeAvatar`, profileData)
+      .post(`http://localhost:5000/api/v1/users/changeAvatar`, profileData)
       .then((res) => {
         setAvatarUrl(res.data.data.avatar);
         setIsLoading(false);
