@@ -39,6 +39,40 @@ The Clinic Management System is a digital platform designed to revolutionize hea
 
 ---
 
+## how to use
+
+1. **clone repo**
+
+```bash
+git clone https://github.com/Udit-kasana/Clinic-management-system.git
+```
+
+2. **got to root folder**
+
+```bash
+cd Clinic-management-system
+npm install
+npm run dev
+```
+
+3. **in backend folder:**
+   create .env file and fill the empty strings
+
+```bash
+cd backend
+touch .env
+
+MONGODB_URI="" //mongodb uri here
+PORT=5000
+
+ACCESS_TOKEN_SECRET=""
+ACCESS_TOKEN_EXPIRY=""
+
+REFRESH_TOKEN_SECRET=""
+REFRESH_TOKEN_EXPIRY=""
+```
+
+
 ## 📈 Highlights
 
 1. **Real-Time Revenue Insights**: Monitor daily, weekly, and monthly revenue on the doctor's dashboard with interactive charts.
