@@ -28,16 +28,16 @@ const LandingPage = () => {
           bgGradient="linear(to-r, cyan.400, cyan.600)"
           backgroundClip="text"
         >
-          Dr. Syed Waseem Pediatric Care
+          Dr. Rajendra kumar kasana
         </Heading>
         <NavLink to="/login">
           <Button colorScheme="cyan" variant="outline" size="md">
-          Login
+            Login
           </Button>
         </NavLink>
       </Flex>
       <Flex align="center" justify="center" flex={1} bgColor="cyan.50">
-        <Image src={img} alt="doctor" w="300px" mx="5%"/>
+        <Image src={img} alt="doctor" w="300px" mx="5%" />
         <Flex direction="column" justify="center" align="center" px="5%">
           <Heading
             display="inline-block"
@@ -52,8 +52,9 @@ const LandingPage = () => {
             Personalized and compassionate care for every child's health needs
           </Text>
           <Text color={"gray.500"} mb={6} textAlign="center">
-            With over 30+ years of experience,Dr. Syed Waseem provides expert medical attention with a gentle
-            touch, ensuring your child's well-being and comfort.
+            With over 30+ years of experience,Dr. Rajendra provides expert
+            medical attention with a gentle touch, ensuring your child's
+            well-being and comfort.
           </Text>
           {/* <Button
             colorScheme="cyan"
