@@ -12,107 +12,90 @@ import {
   Grid,
   Button,
 } from "@chakra-ui/react";
-import { useState, useContext, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { GlobalContext } from "../context/GlobalContext";
-import { useNavigate } from "react-router-dom";
 import { useToast } from "@chakra-ui/react";
 
-const Login = () => {
+// 2. Update the breakpoints as key-value pairs
+
+const Register = () => {
   const [role, setRole] = useState("doctor");
   const [username, setUsername] = useState("");
+  const [fullname, setFullname] = useState("");
+  const [mobileNo, setMobileNo] = useState(0);
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { currentUser, setCurrentUser, setExpirationTime } =
-    useContext(GlobalContext);
-  const navigator = useNavigate();
   const toast = useToast();
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    if (currentUser) {
-      if (currentUser.role === "doctor") navigator("/user/doctor/dashboard");
-      else navigator("/user/receptionist/add-details");
-    
-    }
-  }, []);
 
   const handleSelected = (value) => {
     setRole(value);
   };
 
-  const loginSubmitHandler = (e) => {
-    setIsLoading(true);
+  const registerSubmitHandler = (e) => {
     e.preventDefault();
+    setIsLoading(true);
+
     if (toast.isActive("t1")) {
       toast.closeAll();
     }
 
     axios
-      .post("http://localhost:5000/api/v1/users/login", {
-        role: role.toLowerCase(),
+      .post("http://localhost:5000/api/v1/users/register", {
         username,
+        fullname,
+        mobile_no: mobileNo,
+        role: role.toLowerCase(),
+        email,
         password,
       })
       .then((response) => {
         setError(false);
         setIsLoading(false);
-        const loggedInUser = response.data.data;
-        setCurrentUser(loggedInUser);
-        setExpirationTime(Date.now() + 7 * 24 * 60 * 60 * 1000);
+
         toast({
           id: "t1",
-          title: "Login successful.",
-          description: "You are logged into your account",
+          title: "Registration successful.",
+          description: "Your account has been created successfully",
           status: "success",
           duration: 3000,
           isClosable: true,
         });
-        if (loggedInUser?.role === "doctor")
-          navigator("/user/doctor/dashboard");
-        else navigator("/user/receptionist/add-details");
-       
       })
       .catch((error) => {
         setError(true);
         setIsLoading(false);
-        if (error?.response?.status === 400)
+
+        if (error?.response?.status === 400) {
           toast({
             id: "t1",
-            title: "Login Failed.",
-            description: "All fields are required",
+            title: "Registration Failed.",
+            description: "All fields are required or User already exists",
             status: "error",
             duration: 9000,
             isClosable: true,
           });
-        else if (error?.response?.status === 404)
+        } else if (error?.response?.status === 500) {
           toast({
             id: "t1",
-            title: "Login Failed.",
-            description: "Invalid role chosen",
+            title: "Registration Failed.",
+            description: "Server error while creating user",
             status: "error",
             duration: 9000,
             isClosable: true,
           });
-        else if (error?.response?.status === 409) {
-          setPassword("");
+        } else {
+          console.log(error.response);
           toast({
             id: "t1",
-            title: "Login Failed.",
-            description: "Incorrect Password",
-            status: "error",
-            duration: 9000,
-            isClosable: true,
-          });
-        } else
-          toast({
-            id: "t1",
-            title: "Login Failed.",
+            title: "Registration Failed.",
             description: "Something went wrong",
             status: "error",
             duration: 9000,
             isClosable: true,
           });
+        }
       });
   };
 
@@ -131,7 +114,6 @@ const Login = () => {
             <Image
               width={{ md: "90%", sm: "80%", base: "70%" }}
               src="./src/assets/logo.png"
-            
               filter="drop-shadow(0px 0px 20px #0bc5ea)"
             ></Image>
           </Container>
@@ -148,11 +130,11 @@ const Login = () => {
             minW="300px"
             p={10}
             maxW="400px"
-            onSubmit={loginSubmitHandler}
+            onSubmit={registerSubmitHandler}
           >
             <Grid gap={3}>
               <Heading color="black.200" textAlign="center">
-                Login
+                Register
               </Heading>
               <FormControl>
                 <FormLabel color="black">User Type</FormLabel>
@@ -203,6 +185,20 @@ const Login = () => {
                 </RadioGroup>
               </FormControl>
               <FormControl isRequired>
+                <FormLabel my="0px">Full Name</FormLabel>
+                <Input
+                  type="text"
+                  rounded="10px"
+                  fontSize="20px"
+                  color="black"
+                  bgColor="white"
+                  placeholder="Enter your Full Name"
+                  value={fullname}
+                  onChange={(e) => setFullname(e.target.value)}
+                  isInvalid={error && !fullname}
+                />
+              </FormControl>
+              <FormControl isRequired>
                 <FormLabel my="0px">Username</FormLabel>
                 <Input
                   type="text"
@@ -210,11 +206,39 @@ const Login = () => {
                   fontSize="20px"
                   color="black"
                   bgColor="white"
-                  placeholder="Enter your name"
+                  placeholder="Enter your User name"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   isInvalid={error && !username}
-                ></Input>
+                />
+              </FormControl>
+              <FormControl isRequired>
+                <FormLabel my="0px">Mobile No.</FormLabel>
+                <Input
+                  type="number"
+                  rounded="10px"
+                  fontSize="20px"
+                  color="black"
+                  bgColor="white"
+                  placeholder="Enter your Mobile Number"
+                  value={mobileNo}
+                  onChange={(e) => setMobileNo(e.target.value)}
+                  isInvalid={error && !mobileNo}
+                />
+              </FormControl>
+              <FormControl isRequired>
+                <FormLabel my="0px">Email</FormLabel>
+                <Input
+                  type="email"
+                  rounded="10px"
+                  fontSize="20px"
+                  color="black"
+                  bgColor="white"
+                  placeholder="Enter your Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  isInvalid={error && !email}
+                />
               </FormControl>
               <FormControl isRequired>
                 <FormLabel my="0px">Password</FormLabel>
@@ -235,12 +259,12 @@ const Login = () => {
               <Button
                 type="submit"
                 colorScheme="cyan"
-                onClick={loginSubmitHandler}
+                onClick={registerSubmitHandler}
                 color="white"
                 isLoading={isLoading}
                 loadingText="Logging in"
               >
-                Login
+                Register
               </Button>
             </Grid>
           </FormControl>
@@ -250,4 +274,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

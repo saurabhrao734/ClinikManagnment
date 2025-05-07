@@ -208,24 +208,18 @@ const getCurrentUser = asyncHandler(async (req, res) => {
 });
 
 const updateUserAvatar = asyncHandler(async (req, res) => {
-    // frontend
-    // multer locally upload
-    // uploadCloudinary
-    // db change
     const localPath = req.file?.path;
 
-    if (!localPath) return new ApiError(400, "Avatar is missing");
+    if (!localPath) throw new ApiError(400, "Avatar is missing");
 
     const avatar = await uploadOnCloudinary(localPath);
 
-    if (!avatar.url)
-        return new ApiError(400, "Error while uploading on cloudinary");
+    if (!avatar?.url)
+        throw new ApiError(400, "Error while uploading on Cloudinary");
 
     const user = await User.findByIdAndUpdate(
         req.user?._id,
-        {
-            $set: { avatar: avatar.url },
-        },
+        { $set: { avatar: avatar.url } },
         { new: true }
     ).select("-refreshToken -password");
 
@@ -233,6 +227,7 @@ const updateUserAvatar = asyncHandler(async (req, res) => {
         .status(200)
         .json(new ApiResponse(200, user, "Avatar updated successfully"));
 });
+
 
 // get all appointments
 // Get :- /api/v1/users/appointments
