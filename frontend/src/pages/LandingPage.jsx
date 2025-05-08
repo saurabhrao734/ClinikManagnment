@@ -1,12 +1,4 @@
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Image,
-  Flex,
-  Link,
-} from "@chakra-ui/react";
+import { Heading, Text, Button, Image, Flex, Box } from "@chakra-ui/react";
 
 import { NavLink } from "react-router-dom";
 
@@ -30,11 +22,19 @@ const LandingPage = () => {
         >
           Dr. Rajendra kumar kasana
         </Heading>
-        <NavLink to="/login">
-          <Button colorScheme="cyan" variant="outline" size="md">
-            Login
-          </Button>
-        </NavLink>
+        <Flex justifyContent="space-between" alignItems="center" gap={5}>
+          {" "}
+          <NavLink to="/login">
+            <Button colorScheme="cyan" variant="outline" size="md">
+              Login
+            </Button>
+          </NavLink>
+          <NavLink to="/register">
+            <Button colorScheme="cyan" variant="outline" size="md">
+              register
+            </Button>
+          </NavLink>
+        </Flex>
       </Flex>
       <Flex align="center" justify="center" flex={1} bgColor="cyan.50">
         <Image src={img} alt="doctor" w="300px" mx="5%" />
@@ -56,15 +56,6 @@ const LandingPage = () => {
             medical attention with a gentle touch, ensuring your child's
             well-being and comfort.
           </Text>
-          {/* <Button
-            colorScheme="cyan"
-            color="white"
-            bgGradient="linear(to-r, cyan.400, cyan.500, cyan.600)"
-            size="lg"
-            textTransform={"uppercase"}
-          >
-            Book an Appointment
-          </Button> */}
         </Flex>
       </Flex>
     </Flex>

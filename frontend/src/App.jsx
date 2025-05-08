@@ -16,6 +16,7 @@ import ProfileForm from "./components/forms/ProfileForm";
 import PatientData from "./components/PatientData";
 import AddPatientDetails from "./components/forms/AddPatientDetails";
 import UpdateDetails from "./components/UpdateDetails";
+import Register from "./pages/Register";
 
 const routes = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const routes = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
   {
     path: "/reset-password",
@@ -69,7 +74,7 @@ const routes = createBrowserRouter([
         element: <AddAppointment />,
       },
       {
-        path:"add-details",
+        path: "add-details",
         element: <AddPatientDetails />,
       },
       {
