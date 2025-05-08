@@ -60,16 +60,8 @@ The Clinic Management System is a digital platform designed to revolutionize hea
 git clone https://github.com/Udit-kasana/Clinic-management-system.git
 ```
 
-2. **got to root folder**
-
-```bash
-cd Clinic-management-system
-npm install
-npm run dev
-```
-
-3. **in backend folder:**
-   create .env file and fill the empty strings
+2. **in backend folder:**
+   create .env file with this info
 
 ```bash
 cd backend
@@ -83,4 +75,14 @@ ACCESS_TOKEN_EXPIRY=""
 
 REFRESH_TOKEN_SECRET=""
 REFRESH_TOKEN_EXPIRY=""
+
+CLOUDINARY_URL=""
+```
+
+3. **got to root folder**
+
+```bash
+cd Clinic-management-system
+npm install
+npm run dev
 ```
