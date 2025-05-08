@@ -77,6 +77,11 @@ REFRESH_TOKEN_SECRET=""
 REFRESH_TOKEN_EXPIRY=""
 
 CLOUDINARY_URL=""
+ACCESS_TOKEN_SECRET="anything"
+ACCESS_TOKEN_EXPIRY="7d"
+
+REFRESH_TOKEN_SECRET="anything"
+REFRESH_TOKEN_EXPIRY="7d"
 ```
 
 3. **got to root folder**
@@ -86,3 +91,4 @@ cd Clinic-management-system
 npm install
 npm run dev
 ```
+
