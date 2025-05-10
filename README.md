@@ -1,7 +1,5 @@
 # Clinic Management System
 
-**Developed by CodeSurgery Squad**
-
 ## 🚀 Abstract
 
 The Clinic Management System is a digital platform designed to revolutionize healthcare clinic operations by replacing manual processes with a comprehensive, role-specific solution. Tailored for doctors and administrative staff, this system enhances efficiency, optimizes workflows, and improves patient care.
