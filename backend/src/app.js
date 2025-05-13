@@ -9,6 +9,7 @@ import swaggerUi from "swagger-ui-express";
 import swaggerJsDoc from "swagger-jsdoc";
 import postmanToOpenApi from "postman-to-openapi";
 
+
 const app = express();
 
 import { openapi } from "../openapi.js";
@@ -64,9 +65,11 @@ app.get("/generate-yml", async (req, res) => {
         console.log(err);
     }
 });
-app.get("/", (req, res) => {
-    res.send(
-        "Welcome to backend of clinic management system developed by --Syed Waseem(Code Surgery Squad)"
-    );
-});
+// app.get("/", (req, res) => {
+//     res.send(
+//         "Welcome to backend of clinic management system"
+//     );
+// });
+
+
 export { app };
