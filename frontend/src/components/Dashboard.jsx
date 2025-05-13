@@ -42,7 +42,7 @@ const Dashboard = () => {
         );
 
       axios
-        .get("http://localhost:5000/api/v1/users/doctor/patientCountInfo")
+        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/users/doctor/patientCountInfo`)
         .then((response) => setAddPatientInformation(response.data.data))
         .catch((error) =>
           toast({
@@ -55,7 +55,7 @@ const Dashboard = () => {
         );
 
       axios
-        .get("http://localhost:5000/api/v1/users/doctor/averageAppointments")
+        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/users/doctor/averageAppointments`)
         .then((response) =>
           setAverageAppointments(response.data.data.avgAppointments)
         )
