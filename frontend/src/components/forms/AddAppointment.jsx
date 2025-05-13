@@ -76,7 +76,7 @@ const AddAppointment = () => {
       else newTime += " AM";
       axios
         .post(
-          "http://localhost:5000/api/v1/users/receptionist/addAppointment",
+          `${import.meta.env.VITE_API_BASE_URL}/api/v1/users/receptionist/addAppointment`,
           {
             patient_name,
             mobile_no,

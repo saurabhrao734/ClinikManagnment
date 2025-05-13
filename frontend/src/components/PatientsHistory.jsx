@@ -42,7 +42,7 @@ const PatientsHistory = () => {
       navigator("/login");
     }
     axios
-      .get("http://localhost:5000/api/v1/users/allPatientDetails")
+      .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/users/allPatientDetails`)
       .then((response) => setPatientsHistory(response.data.data))
       .catch((error) =>
         toast({

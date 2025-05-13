@@ -52,7 +52,7 @@ const AddBilling = ({ patient_name }) => {
     setIsLoading(true);
     axios
       .post(
-        "http://localhost:5000/api/v1/users/receptionist/addPaymentDetails",
+        `${import.meta.env.VITE_API_BASE_URL}/api/v1/users/receptionist/addPaymentDetails`,
         {
           patient_name,
           amount,
@@ -140,7 +140,6 @@ const AddBilling = ({ patient_name }) => {
           placeholder="Enter First Name and Last Name"
           value={patient_name}
           isInvalid={error && !patient_name}
-          readOnly
         />
       </FormControl>
       <FormControl>

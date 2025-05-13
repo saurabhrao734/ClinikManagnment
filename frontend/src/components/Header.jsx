@@ -37,7 +37,7 @@ const Header = () => {
   const handleLogout = () => {
     setIsLoading(true);
     axios
-      .post("http://localhost:5000/api/v1/users/logout", {
+      .post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/users/logout`, {
         credentials: "include",
       })
       .then((response) => {

@@ -25,7 +25,7 @@ const Dashboard = () => {
       navigator("/login");
     } else {
       axios
-        .get("http://localhost:5000/api/v1/users/doctor/revenueInfo")
+        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/users/doctor/revenueInfo`)
         .then((response) => {
           console.log("===  Dashboard.jsx [31] ===", revenueInformation);
           setRevenueInformation(response.data.data);
