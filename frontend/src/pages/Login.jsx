@@ -49,7 +49,7 @@ const Login = () => {
     }
 
     axios
-      .post("http://localhost:5000/api/v1/users/login", {
+      .post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/users/login`, {
         role: role.toLowerCase(),
         username,
         password,
@@ -71,7 +71,6 @@ const Login = () => {
         if (loggedInUser?.role === "doctor")
           navigator("/user/doctor/dashboard");
         else navigator("/user/receptionist/add-details");
-       
       })
       .catch((error) => {
         setError(true);

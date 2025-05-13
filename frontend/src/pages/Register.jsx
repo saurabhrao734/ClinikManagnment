@@ -42,7 +42,7 @@ const Register = () => {
     }
 
     axios
-      .post("http://localhost:5000/api/v1/users/register", {
+      .post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/users/register`, {
         username,
         fullname,
         mobile_no: mobileNo,
