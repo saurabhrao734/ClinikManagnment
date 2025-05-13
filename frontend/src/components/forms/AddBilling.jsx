@@ -140,7 +140,6 @@ const AddBilling = ({ patient_name }) => {
           placeholder="Enter First Name and Last Name"
           value={patient_name}
           isInvalid={error && !patient_name}
-          readOnly
         />
       </FormControl>
       <FormControl>
