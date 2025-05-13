@@ -7,7 +7,8 @@
     "frontend": "cd frontend && npm",
     "backend": "cd backend && npm",
     "dev": "concurrently \"npm run frontend run dev\" \"npm run backend run dev\"",
-    "install": "npm run frontend i && npm run backend i"
+    "install": "npm run frontend i && npm run backend i",
+    "build": "cd frontend && npm install && npm run build"
   },
   "dependencies": {
     "concurrently": "8.2.2",
