@@ -20,7 +20,7 @@ const LandingPage = () => {
           bgGradient="linear(to-r, cyan.400, cyan.600)"
           backgroundClip="text"
         >
-          Dr. Rajendra kumar kasana
+          Mukesh Kumar Soni 
         </Heading>
         <Flex justifyContent="space-between" alignItems="center" gap={5}>
           {" "}
@@ -52,7 +52,7 @@ const LandingPage = () => {
             Personalized and compassionate care for every child's health needs
           </Text>
           <Text color={"gray.500"} mb={6} textAlign="center">
-            With over 30+ years of experience,Dr. Rajendra provides expert
+            With over 30+ years of experience, Dr. Mukesh Kumar Soni provides expert
             medical attention with a gentle touch, ensuring your child's
             well-being and comfort.
           </Text>

@@ -12,6 +12,8 @@ import {
   Grid,
   Button,
 } from "@chakra-ui/react";
+
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
@@ -19,6 +21,7 @@ import { useToast } from "@chakra-ui/react";
 // 2. Update the breakpoints as key-value pairs
 
 const Register = () => {
+  const navigator = useNavigate();
   const [role, setRole] = useState("doctor");
   const [username, setUsername] = useState("");
   const [fullname, setFullname] = useState("");
@@ -54,6 +57,7 @@ const Register = () => {
         setError(false);
         setIsLoading(false);
 
+
         toast({
           id: "t1",
           title: "Registration successful.",
@@ -62,6 +66,7 @@ const Register = () => {
           duration: 3000,
           isClosable: true,
         });
+        navigator("/login");
       })
       .catch((error) => {
         setError(true);
