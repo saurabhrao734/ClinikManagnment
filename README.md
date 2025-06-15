@@ -6,10 +6,6 @@ The Clinic Management System is a digital platform designed to revolutionize hea
 
 ---
 
-## 🌐 Live Demo
-
-[Click here to view the deployed site](https://clinic-management-system-jcks.onrender.com)
-
 ## 🏥 Key Features
 
 ### Doctor Module:
