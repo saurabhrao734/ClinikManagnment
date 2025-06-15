@@ -55,7 +55,7 @@ The Clinic Management System is a digital platform designed to revolutionize hea
 1. **clone repo**
 
 ```bash
-git clone https://github.com/Udit-kasana/Clinic-management-system.git
+git clone https://github.com/saurabhrao734/ClinikManagnment.git
 ```
 
 2. **in backend folder:**
