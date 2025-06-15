@@ -22,7 +22,6 @@ The Clinic Management System is a digital platform designed to revolutionize hea
 3. **Billing and Invoicing**: Manage financial transactions and generate invoices.
 
 ---
-
 ## 💻 Tech Stack
 
 ### **Frontend**
